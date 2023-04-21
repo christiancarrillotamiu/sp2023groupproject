@@ -6,7 +6,7 @@ void adminFileGeneration();
 
 int main() 
 {
-    adminFileGeneration();
+    adminFileGeneration(); // Create the file
 
     string response, response2, teacherUser, teacherPass, teacherUserLogin, teacherPassLogin, teacherUserFile, teacherPassFile;
 
