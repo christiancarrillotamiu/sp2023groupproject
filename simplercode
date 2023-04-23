@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string response;
+
+    cout << "               Welcome to Riverdale Academy! \nPlease specify if you are a student, teacher, or administrator.\n";
+    cout << "\n";
+    cout << "      A. Student       B. Teacher       C. Administrator\n";
+    cout << "\n";
+
+    cin >> response;
+    //if user is a student
+    if (response == "a" || response == "A" || response == "a." || response == "A.")
+    {
+        cout << "  \nWhat would you like to do as a student?\n";
+    }
+    // if user is a teacher
+    if (response == "b" || response == "B" || response == "b." || response == "B.")
+    {
+        cout << "  \nWhat would you like to do as a teacher?\n";
+    }
+    // if user is an admin
+    if (response == "c" || response == "C" || response == "c." || response == "C.")
+    {
+        cout << " \nWhat would you like to do as an administrator?\n";
+    }
+    // if user does not input a, b, or c
+    if (response != "a" || response != "A" || response != "a." || response != "A." || response != "b" || response != "B" || response != "b." || response != "B." || response != "c" || response != "C" || response != "c." || response != "C.")
+    {
+
+    }
+}
