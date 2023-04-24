@@ -1,0 +1,88 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int studentRole();
+int teacherRole();
+int adminRole();
+
+int main()
+{
+    int response;
+
+    cout << "               Welcome to Riverdale Academy! \nPlease specify if you are a student, teacher, or administrator.\n";
+    cout << "\n";
+    cout << "      1. Student       2. Teacher       3. Administrator      0. Exit\n";
+    cout << "\n";
+
+    cin >> response;
+    do {
+        //if user is a student
+        if (response == 1)
+        {
+            cout << "  \nWhat would you like to do as a student?\n";
+            studentRole();
+            return 0;
+        }
+        // if user is a teacher
+        if (response == 2)
+        {
+            cout << "  \nWhat would you like to do as a teacher?\n";
+            teacherRole();
+            return 0;
+        }
+        // if user is an admin
+        if (response == 3)
+        {
+            cout << " \nWhat would you like to do as an administrator?\n";
+            adminRole();
+            return 0;
+        }
+        // if user does not input a, b, or c
+        if (response != 1 && response != 2 && response != 3 && response != 0)
+        {
+            cout << "\nUnknown response. Please try again.";
+            cin >> response;
+        }
+    } while (response != 0);
+   
+}
+int studentRole() {
+    int answer;
+    cout << "      1. View classes      2. View grades      3. Submit assignments      0. Exit\n";
+    cin >> answer;
+     if (answer == 1) {
+         cout << "\n1st: Math\n2nd: English\n3rd: Government\n4th: History\n";
+    }
+    else if(answer == 2) {
+        cout << "\nMath: B\nEnglish: A\nGovernment: A\nHistory: B\n";
+    }
+    else if(answer == 3) {
+        cout << "\nWhich assignments would you like to submit?\n";
+        
+    }
+    else { }
+    return answer;
+}
+int teacherRole() {
+    int answer;
+    cout << "      1. View classes      2. View students      3. Edit grades      4. Edit assignments      0. Exit\n";
+    cin >> answer;
+    if (answer == 1) {
+        cout << "Class: 1      Class: 2      Class: 3      Class: 4";
+    }
+    else if(answer == 2) {
+        cout << "Which class would you like to view?\nClass: 1      Class: 2      Class: 3      Class: 4\n";
+        cin >> answer;
+        if (answer == 1) {
+        
+        }
+    }
+    return answer;
+}
+int adminRole() {
+    int answer;
+    cout << "      1. View teachers      2. View students      3. View student information      4. View private information\n";
+    
+    return answer;
+}
