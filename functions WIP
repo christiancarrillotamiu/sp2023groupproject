@@ -83,6 +83,6 @@ int teacherRole() {
 int adminRole() {
     int answer;
     cout << "      1. View teachers      2. View students      3. View student information      4. View private information\n";
-    
+    cin >> answer;
     return answer;
 }
