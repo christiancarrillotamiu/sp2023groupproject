@@ -1,0 +1,145 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int studentRole();
+int teacherRole();
+int adminRole();
+
+int main()
+{
+    int response;
+
+    cout << "               Welcome to Riverdale Academy! \nPlease specify if you are a student, teacher, or administrator.\n";
+    cout << "\n";
+    cout << "      1. Student       2. Teacher       3. Administrator      0. Exit\n";
+    cout << "\n";
+
+    cin >> response;
+    do {
+        //if user is a student
+        if (response == 1)
+        {
+            cout << "  \nWhat would you like to do as a student?\n";
+            studentRole();
+            return 0;
+        }
+        // if user is a teacher
+        if (response == 2)
+        {
+            cout << "  \nWhat would you like to do as a teacher?\n";
+            teacherRole();
+            return 0;
+        }
+        // if user is an admin
+        if (response == 3)
+        {
+            cout << " \nWhat would you like to do as an administrator?\n";
+            adminRole();
+            return 0;
+        }
+        // if user does not input a, b, or c
+        if (response != 1 && response != 2 && response != 3 && response != 0)
+        {
+            cout << "\nUnknown response. Please try again.";
+            cin >> response;
+        }
+    } while (response != 0);
+
+}
+int studentRole() {
+    int answer, answer2;
+    do{
+    cout << "      1. View classes      2. View grades      3. Submit assignments      0. Exit\n";
+    cin >> answer;
+    if (answer == 1) {
+        cout << "\n1st: Math\n2nd: English\n3rd: Government\n4th: History\n";
+    }
+    if (answer == 2) {
+        cout << "\nMath: B\nEnglish: A\nGovernment: A\nHistory: B\n";
+    }
+    if (answer == 3) {
+        cout << "\nWhich assignments would you like to submit?\n";
+
+        cout << "\n1. Algebra Unit 1.3" << '\n' << "2.Algebra Unit 1.5\n" <<'\n';
+        cin >> answer2;
+        if (answer2 == 1) {
+            cout << "\n==Everthing looks good here, good job==\n";
+        }
+        else {
+            cout << "\n==You finished the assignment on time, congrats!==\n";
+        }
+    }
+    if (answer == 0) {
+        cout << "\nHave a great day! :)\n";
+    }
+     
+    else {
+        cout << '\n' << "What else would you like to do today?" << '\n';
+    }
+    } while (answer == 1 || answer == 2 || answer == 3);
+    
+    return answer;
+}
+int teacherRole() {
+    int answer, answer2;
+    do {
+        cout << "      1. View classes      2. View students      3. Edit grades      4. Edit assignments      0. Exit\n" << '\n';
+        cin >> answer;
+        if (answer == 1) {
+            cout << "\n      Class: MATH-322 (M-T-Th-F, 9:30 AM - 10:45 AM)\n      Class: MATH-323(M-W-F, 10:30 AM - 11:45 AM)\n      Class: MATH-324(M-Th, 12:30 PM - 1:45 PM)\n      Class: MATH-325(T, 1 PM - 2 PM)" <<'\n';
+        }
+        if (answer == 2) {
+            cout << "\nWhich class would you like to view?\n1. Class: MATH-322     2. Class: MATH-323     3. Class: MATH-324     4. Class: MATH-325\n" <<'\n';
+            cin >> answer2;
+            if (answer2 == 1) {
+                cout << "\nHere is the list of student names: Daniel Alexander Lucas Akins Gracie Aldama Tom Arrowood Kelly Anderson\n";
+            }
+            if (answer2 == 2) {
+                cout << "\nHere is the list of student names: Madison Banks Aaron Barnard Jacob Barrera Santiago Beck Stephanie Baker\n";
+            }
+            if (answer2 == 3) {
+                cout << "\nHere is the list of student names: Jonathon Carey Isabel Carrillo Gabriel Castillo Ryan Castro\n";
+            }
+            if (answer2 == 4) {
+                cout << "\nHere is the list of student names: Audrey Davis Carter Dayton Michael Del Toro Aiden Delgado Nolan Davison\n";
+            }
+        }
+        if (answer == 3|| answer == 4) {
+                cout << "====DOWN FOR MAINTENANCE====\n" <<'\n';
+        }
+        if (answer == 0) {
+            cout << "\nHave a great day! :)\n";
+        }
+        else {
+        cout << "\nWhat else would you like to do?\n";
+        }
+    } while (answer == 1 || answer == 2|| answer==3 || answer==4 || answer!=0);
+    return answer;
+}
+int adminRole() {
+    int answer;
+    do{
+    cout << "      1. View teachers      2. View students      3. View student information      0. Exit\n" << '\n';
+    cin >> answer;
+    if (answer == 1) {
+        cout << "\nSusan White - History\nJeremy Elbertson - Government\nVincent Franzetti - English\nHector Garcia - Math\n";
+    }
+    if (answer == 2) {
+        cout << "\nDaniel Alexander Lucas Akins Gracie Aldama Tom Arrowood Kelly Anderson Madison Banks Aaron Barnard Jacob Barrera Santiago Beck Stephanie Baker\n"
+        << "Jonathon Carey Isabel Carrillo Gabriel Castillo Ryan Castro Audrey Davis Carter Dayton Michael Del Toro Aiden Delgado Nolan Davison";
+    }
+    if (answer == 3) {
+        cout << "\nDaniel Alexander - Freshman\nLucas Akins - Freshman\nGracie Aldama -Sophomore\nTom Arrowood - Sophomore\nKelly Anderson - Junior\nMadison Banks - Junior\n"
+        << "Aaron Barnard - Senior\nJacob Barrera - Senior\nSantiago Beck - Freshman\nStephanie Baker - Freshman\nJonathon Carey - Sophomore\nIsabel Carrillo - Sophomore\nGabriel Castillo - Junior\n"
+        << "Ryan Castro - Junior\nAudrey Davis - Senior\nCarter Dayton - Senior\nMichael Del Toro - Freshman\nAiden Delgado - Freshman\nNolan Davison - Sophomore\n";
+    }
+    if (answer == 0) {
+        cout << "\nHave a great day! :)\n";
+    }
+    else {
+        cout << '\n' << "What else would you like to do today?" << '\n';
+    }
+    } while (answer == 1 || answer == 2 || answer == 3);
+    return answer;
+}
